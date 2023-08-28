@@ -1,6 +1,7 @@
 alembic==1.11.3
 annotated-types==0.5.0
 anyio==3.7.1
+bcrypt==4.0.1
 click==8.1.7
 colorama==0.4.6
 ecdsa==0.18.0
