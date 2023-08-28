@@ -10,7 +10,7 @@ from sqlalchemy import (
 from app.config.database import DBBase
 
 
-class Contributor(DBBase):
+class User(DBBase):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
