@@ -16,5 +16,5 @@ class UserCreate(BaseUser):
 # This will be used when we need to return a user obj
 class User(BaseUser):
     is_active: bool = Field(description="If the user account is disabled or not")
-    last_login: datetime = Field(description="The User's last login date")
+    last_login: datetime | None = Field(description="The User's last login date")
     created_at: datetime = Field(description="The User's creation date")
