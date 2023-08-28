@@ -12,6 +12,6 @@ router = APIRouter()
     status_code=status.HTTP_201_CREATED,
     response_model=schemas.User,
 )
-def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+def user_create(user: schemas.UserCreate, db: Session = Depends(get_db)):
     # Directly call the service function to create a new user
-    return services.create_contributor(user=user, db=db)
+    return services.create_user(user=user, db=db)
