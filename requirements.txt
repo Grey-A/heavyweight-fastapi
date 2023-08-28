@@ -8,6 +8,7 @@ greenlet==2.0.2
 h11==0.14.0
 idna==3.4
 passlib==1.7.4
+psycopg2==2.9.7
 pyasn1==0.5.0
 pydantic==2.3.0
 pydantic-settings==2.0.3
