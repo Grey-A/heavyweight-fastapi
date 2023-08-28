@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel, Field
 
 
@@ -15,5 +16,5 @@ class UserCreate(BaseUser):
 # This will be used when we need to return a user obj
 class User(BaseUser):
     is_active: bool = Field(description="If the user account is disabled or not")
-    last_login: str = Field(description="The User's last login date")
-    created_at: str = Field(description="The User's creation date")
+    last_login: datetime = Field(description="The User's last login date")
+    created_at: datetime = Field(description="The User's creation date")
