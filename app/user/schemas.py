@@ -8,12 +8,12 @@ class BaseUser(BaseModel):
 
 
 # This will be used when creating a new user
-class ContributorCreate(BaseUser):
+class UserCreate(BaseUser):
     password: str = Field(description="The User's Raw password", max_length=255)
 
 
 # This will be used when we need to return a user obj
-class Contributor(BaseUser):
+class User(BaseUser):
     is_active: bool = Field(description="If the user account is disabled or not")
     last_login: str = Field(description="The User's last login date")
     created_at: str = Field(description="The User's creation date")
