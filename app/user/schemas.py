@@ -18,3 +18,13 @@ class User(BaseUser):
     is_active: bool = Field(description="If the user account is disabled or not")
     last_login: datetime | None = Field(description="The User's last login date")
     created_at: datetime = Field(description="The User's creation date")
+
+
+class UserLogin(BaseModel):
+    email: str = Field(description="The User's email address", max_length=255)
+    password: str = Field(description="The User's Raw password", max_length=255)
+
+
+class Token(BaseModel):
+    access_token: str = Field(description="The JWT access token")
+    token_type: str = Field(description="The JWT token type")
