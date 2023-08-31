@@ -7,7 +7,6 @@ class Settings(BaseSettings):
     # Security
     SECRET_KEY: str = os.environ.get("SECRET_KEY")
     HASHING_ALGORITHM: str = os.environ.get("HASHING_ALGORITHM")
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES")
 
     # DB Settings
     POSTGRES_USER: str = os.environ.get("PGUSER")
