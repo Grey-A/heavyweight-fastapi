@@ -2,7 +2,7 @@ from fastapi import status, APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.dependencies import get_db
-from app.user import schemas, services
+from app.user import schemas, security, services
 
 router = APIRouter()
 
@@ -22,7 +22,10 @@ def user_create(user: schemas.UserCreate, db: Session = Depends(get_db)):
     status_code=status.HTTP_200_OK,
     response_model=schemas.Token,
 )
-def user_login(user: schemas.UserLogin, db: Session = Depends(get_db)):
+def user_login(
+    user: schemas.UserLogin = Depends(security.OAuth2PasswordRequestForm),
+    db: Session = Depends(get_db),
+):
     # Directly call the service function to login
     return services.login_user(user_credentials=user, db=db)
 
