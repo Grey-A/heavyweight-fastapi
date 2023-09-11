@@ -23,7 +23,7 @@ def user_create(user: schemas.UserCreate, db: Session = Depends(get_db)):
     response_model=schemas.Token,
 )
 def user_login(
-    user: schemas.UserLogin = Depends(security.OAuth2PasswordRequestForm),
+    user: schemas.UserLogin,
     db: Session = Depends(get_db),
 ):
     # Directly call the service function to login

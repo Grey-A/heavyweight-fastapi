@@ -1,32 +1,7 @@
-from fastapi import Form
 from jose import jwt
-from typing import Annotated, Union
 from passlib.context import CryptContext
 
 from app.config.settings import settings
-
-
-class OAuth2PasswordRequestForm:
-    """
-    Custom OAuth2PasswordRequestForm Based on fast.security.OAuth2PasswordRequestForm which allows email and password login
-    """
-
-    def __init__(
-        self,
-        *,
-        grant_type: Annotated[Union[str, None], Form(pattern="password")] = None,
-        username: Annotated[str, Form()],
-        password: Annotated[str, Form()],
-        scope: Annotated[str, Form()] = "",
-        client_id: Annotated[Union[str, None], Form()] = None,
-        client_secret: Annotated[Union[str, None], Form()] = None,
-    ):
-        self.grant_type = grant_type
-        self.email = username  # NOTE: Take note of here
-        self.password = password
-        self.scopes = scope.split()
-        self.client_id = client_id
-        self.client_secret = client_secret
 
 
 def hash_password(raw: str) -> str:
