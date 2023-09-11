@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from app.user.apis import router as user_router
 
-app = FastAPI()
+app = FastAPI(title="Heavyweight(FastAPI)")
 
 
 # Routers
