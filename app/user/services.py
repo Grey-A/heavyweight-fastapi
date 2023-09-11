@@ -14,7 +14,9 @@ from app.user.validators import validate_user
 
 # NOTE: This doesnt allow login with email and password on the swagger docs
 OAUTH2_SCHEME = OAuth2PasswordBearer(
-    tokenUrl="user/login", description="Login with your Email(username) and Password", scheme_name="Login"
+    tokenUrl="user/login",
+    description="Login with your Email(username) and Password",
+    scheme_name="Login",
 )
 
 
