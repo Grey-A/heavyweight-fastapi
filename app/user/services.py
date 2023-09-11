@@ -12,7 +12,7 @@ from app.user.security import create_access_token, hash_password, verify_passwor
 from app.user.validators import validate_user
 
 # NOTE: This doesnt allow login with email and password on the swagger docs
-OAUTH2_SCHEME = OAuth2PasswordBearer(tokenUrl="login")
+OAUTH2_SCHEME = OAuth2PasswordBearer(tokenUrl="user/login")
 
 
 def create_user(user: schemas.UserCreate, db: Session):
