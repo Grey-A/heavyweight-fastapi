@@ -12,16 +12,13 @@ app/
         __init__.py
         database.py
         settings.py
-    user/
+    example_module/
         __init__.py
         apis.py
-        exceptions.py
         models.py
         schemas.py
-        security.py
         selectors.py
         services.py
-        validators.py
     __init__.py
     dependencies.py
     main.py
@@ -48,13 +45,10 @@ requirements.txt
 - **dependencies.py:** Initializes the database session.
 - **user/:** Contains code and functionality related to users.
   - **apis.py:** Houses endpoints like `user_create`, `user_login`, and `user_details`.
-  - **exceptions.py:** Stores application-specific exceptions.
   - **models.py:** Uses SQLAlchemy to draft the user table. Alembic handles migrations.
   - **schemas.py:** Defines schemas for create, details, login, and token requests.
-  - **security.py:** Contains functions for password hashing, verification, and JWT token creation.
   - **selectors.py:** Manages GET operations, fetching data from the database.
   - **services.py:** Handles POST, PUT, PATCH, and DELETE operations, manipulating database data.
-  - **validators.py:** Validates API input before committing it to the database. Essential for data integrity.
 
 ### Getting Started
 
