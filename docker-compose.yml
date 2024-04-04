@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  heavyweight_fastapi:
+    build: .
+    command: bash -c 'while !</dev/tcp/heavyweight_db/5432; do sleep 1; done; uvicorn app.main:app --host 0.0.0.0 --port 8000'
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    environment:
+      - SECRET_KEY=supersecretkey
+      - HASHING_ALGORITHM=HS256
+      - POSTGRES_DATABASE_URL=postgresql://heavyweight:backend@heavyweight_db:5432/heavyweight_db
+    depends_on:
+      - heavyweight_db
+    networks:
+      - heavyweight_network
+
+  heavyweight_db:
+    image: postgres:15-alpine
+    volumes:
+      - heavyweight_volume:/var/lib/postgresql/data
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=heavyweight
+      - POSTGRES_PASSWORD=backend
+      - POSTGRES_DB=heavyweight_db
+    networks:
+      - heavyweight_network
+
+volumes:
+  heavyweight_volume:
+
+
+networks:
+  heavyweight_network:
