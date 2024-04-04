@@ -5,7 +5,7 @@ from fastapi.responses import ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 
-from app.dependencies import get_db
+from app.common.dependencies import get_db
 from app.example_module.apis import router as example_router
 
 
