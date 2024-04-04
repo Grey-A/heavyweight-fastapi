@@ -7,9 +7,11 @@ ecdsa==0.18.0
 fastapi==0.110.1
 greenlet==3.0.3
 h11==0.14.0
+httptools==0.6.1
 idna==3.6
 Mako==1.3.2
 MarkupSafe==2.1.5
+orjson==3.10.0
 passlib==1.7.4
 psycopg2==2.9.9
 pyasn1==0.6.0
