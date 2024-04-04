@@ -3,7 +3,7 @@ builder = "NIXPACKS"
 
 [deploy]
 numReplicas = 1
-# healthcheckPath = "/health"
+healthcheckPath = "/health"
 healthcheckTimeout = 300
 sleepApplication = true
 restartPolicyType = "ON_FAILURE"
