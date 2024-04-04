@@ -1,5 +1,7 @@
-from anyio import to_thread
+"""This module contains the main FastAPI application."""
+
 from contextlib import asynccontextmanager
+from anyio import to_thread
 from fastapi import Depends, FastAPI
 from fastapi.responses import ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -11,7 +13,8 @@ from app.example_module.apis import router as example_router
 
 # Lifespan (startup, shutdown)
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(_: FastAPI):
+    """This is the startup and shutdown code for the FastAPI application."""
     # Startup code
     print("System Call: Enhance Armament x_x")  # SAO Reference
 
@@ -53,7 +56,7 @@ app.add_middleware(
 
 # Health Check
 @app.get("/health", status_code=200, include_in_schema=False)
-async def health_check(db=Depends(get_db)):
+async def health_check(_=Depends(get_db)):
     """This is the health check endpoint"""
     return {"status": "ok"}
 

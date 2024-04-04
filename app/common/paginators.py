@@ -1,3 +1,5 @@
+"""This module contains the pagination logic for the application."""
+
 import math
 from sqlalchemy.orm import Query
 

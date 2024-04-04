@@ -1,3 +1,5 @@
+"""This module contains the API endpoints for the example module."""
+
 from fastapi import APIRouter, Depends
 
 from app.common.dependencies import pagination_params
