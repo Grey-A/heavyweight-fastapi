@@ -3,7 +3,7 @@ version: '3.8'
 services:
   heavyweight_fastapi:
     build: .
-    command: bash -c 'while !</dev/tcp/heavyweight_db/5432; do sleep 1; done; uvicorn app.main:app --host 0.0.0.0 --port 8000'
+    command: bash -c 'while !</dev/tcp/heavyweight_db/5432; do sleep 1; done; alembic upgrade head; uvicorn app.main:app --host 0.0.0.0 --port 8000'
     volumes:
       - .:/app
     ports:
