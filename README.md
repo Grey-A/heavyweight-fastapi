@@ -109,9 +109,12 @@ start.sh
 
 5. Start the application in development mode:
    ```
-   uvicorn app.main:app --reload
+   fastapi dev
    ```
-
+  In production use
+  ```
+  fastapi run
+  ```
 </br>
 
 6. Test the application by making requests to endpoints.
